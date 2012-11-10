@@ -50,7 +50,7 @@ import static processing.app.I18n._;
  */
 public class UpdateCheck implements Runnable {
   Base base;
-  String downloadURL = _("http://www.arduino.cc/latest.txt");
+  String downloadURL = _("http://digitalwolfstudio.tk/latest.txt");
 
   static final long ONE_DAY = 24 * 60 * 60 * 1000;
 
@@ -100,8 +100,8 @@ public class UpdateCheck implements Runnable {
       Preferences.set("update.last", String.valueOf(now));
 
       String prompt =
-        _("A new version of Arduino is available,\n" +
-          "would you like to visit the Arduino download page?");
+        _("A new version of Wolfduino is available,\n" +
+          "would you like to visit the Wolfduino download page?");
         
       if (base.activeEditor != null) {
         if (latest > Base.REVISION) {
@@ -115,7 +115,7 @@ public class UpdateCheck implements Runnable {
                                                     options,
                                                     options[0]);
           if (result == JOptionPane.YES_OPTION) {
-            Base.openURL(_("http://www.arduino.cc/en/Main/Software"));
+            Base.openURL(_("http://digitalwolfstudio.tk/software"));
           }
         }
       }
